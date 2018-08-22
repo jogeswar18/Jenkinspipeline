@@ -10,4 +10,8 @@ stage ("build the artifact")
 {
 sh "'${maven_home}/bin/mvn' package"
 }
+  stage ("Deploying artifact")
+  {
+   sh  "scp /var/lib/jenkins/workspace/job_e/target/course.war test@172.31.20.176:/home/test/apache-tomcat-9.0.10/webapps"
+  }
 }
