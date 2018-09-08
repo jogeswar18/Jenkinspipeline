@@ -12,6 +12,6 @@ sh "'${maven_home}/bin/mvn' package"
 }
   stage ("Deploying artifact")
   {
-   sh  "scp -i /home/ec2-user/test.pem /var/lib/jenkins/workspace/pipeline_job/target/course.war ec2-user@13.233.16.70:/home/ec2-user/apache-tomcat-9.0.11/webapps"
+   sh  "scp -i /home/test/test.pem /var/lib/jenkins/workspace/pipeline_job/target/course.war test@13.233.16.70:/home/ec2-user/apache-tomcat-9.0.11/webapps"
   }
 }
